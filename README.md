@@ -7,7 +7,7 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 ## 1. `cd` to nvim config directory
 ### Windows
 ```
-cd %APPDATA%\Local\nvim
+cd AppData\Local\nvim
 ```
 
 ### MacOS and Linux
@@ -17,7 +17,7 @@ cd ~/.config/nvim
 
 ## 2. Clone the repository
 ```
-git clone https://github.com/0DarkPhoenix/lazyvim-config.git
+git clone https://github.com/0DarkPhoenix/lazyvim-config.git ./
 ```
 
 # Update lazyvim config from remote
