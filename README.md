@@ -19,3 +19,8 @@ cd ~/.config/nvim
 ```
 git clone https://github.com/0DarkPhoenix/lazyvim-config.git
 ```
+
+# Update lazyvim config from remote
+```
+git pull --ff-only
+```
