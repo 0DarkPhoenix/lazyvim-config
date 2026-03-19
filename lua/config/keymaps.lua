@@ -2,6 +2,10 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
--- Remap c and d to use the blackhole register
+-- Remap yanking keys to use the blackhole register
 vim.keymap.set({ "n", "v" }, "d", '"_d', { noremap = true })
 vim.keymap.set({ "n", "v" }, "c", '"_c', { noremap = true })
+vim.keymap.set({ "n", "v" }, "x", '"_x', { noremap = true })
+
+-- Center lines on vertical movement
+vim.opt.scrolloff = 999
