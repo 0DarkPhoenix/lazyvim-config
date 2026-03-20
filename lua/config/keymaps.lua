@@ -17,4 +17,3 @@ vim.keymap.set("n", "<leader>yl", function()
   vim.fn.setreg("+", path .. ":" .. line_num)
   vim.notify("Copied to clipboard: " .. path .. ":" .. line_num)
 end, { desc = "Copy relative path + line number" })
-
