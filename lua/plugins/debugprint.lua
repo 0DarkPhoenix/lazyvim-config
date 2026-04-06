@@ -5,8 +5,8 @@ return {
       normal = {
         plain_below = "<leader>cp",
         plain_above = "<leader>cP",
-        variable_below = "<leader>cv",
-        variable_above = "<leader>cV",
+        variable_below = "<leader>cV",
+        variable_above = "",
         variable_below_alwaysprompt = "",
         variable_above_alwaysprompt = "",
         surround_plain = "g?sp",
