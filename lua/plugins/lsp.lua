@@ -26,6 +26,11 @@ return {
           },
         },
       },
+      -- biome = {
+      --   cmd = { "biome", "lsp-proxy" },
+      --   root_dir = require("lspconfig.util").root_pattern("biome.json", "package.json"),
+      --   single_file_support = true,
+      -- },
     },
   },
 }

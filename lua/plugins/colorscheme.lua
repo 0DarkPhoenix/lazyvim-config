@@ -7,7 +7,6 @@ return {
       fg = "#808ece",
     },
     custom_highlights = {
-      Nontext = { fg = "#ffffff" },
       MatchParen = { fg = "#ffffff" },
     },
   },

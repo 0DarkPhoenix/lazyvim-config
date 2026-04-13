@@ -16,6 +16,26 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
     local bufnr = args.buf
 
+    -- Helper function to run code actions synchronously
+    local function sync_code_action(action)
+      local params = vim.lsp.util.make_range_params()
+      params.context = { only = { action }, diagnostics = {} }
+      local results = vim.lsp.buf_request_sync(bufnr, "textDocument/codeAction", params, 1000)
+
+      if not results then
+        return
+      end
+      for _, res in pairs(results) do
+        for _, r in pairs(res.result or {}) do
+          if r.edit then
+            vim.lsp.util.apply_workspace_edit(r.edit, client.offset_encoding)
+          elseif type(r.command) == "table" then
+            vim.lsp.buf.execute_command(r)
+          end
+        end
+      end
+    end
+
     -- Biome: fixAll on save
     if client.name == "biome" then
       local group = vim.api.nvim_create_augroup("BiomeFixAll_" .. bufnr, { clear = true })
@@ -24,13 +44,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
         group = group,
         buffer = bufnr,
         callback = function()
-          vim.lsp.buf.code_action({
-            context = {
-              only = { "source.fixAll.biome" },
-              diagnostics = {},
-            },
-            apply = true,
-          })
+          sync_code_action("source.fixAll.biome")
         end,
       })
     end
@@ -43,18 +57,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
         group = group,
         buffer = bufnr,
         callback = function()
-          vim.lsp.buf.code_action({
-            context = {
-              only = { "source.fixAll", "source.organizeImports" },
-              diagnostics = {},
-            },
-            apply = true,
-          })
+          sync_code_action("source.fixAll")
+          sync_code_action("source.organizeImports")
         end,
       })
 
       -- Optional: ensure rustfmt runs too (if rust-analyzer formatting is enabled)
-      -- vim.api.nvim_create_autocmd("BufWritePre", {
       --   group = group,
       --   buffer = bufnr,
       --   callback = function()
