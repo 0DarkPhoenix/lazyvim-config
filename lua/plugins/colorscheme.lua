@@ -1,5 +1,6 @@
 return {
   "tiagovla/tokyodark.nvim",
+  lazy = false,
   opts = {
     gamma = 1.1,
     custom_palette = {

@@ -1,6 +1,6 @@
 return {
   "m4xshen/hardtime.nvim",
-  lazy = false,
+  mode = "VeryLazy",
   dependencies = { "MunifTanjim/nui.nvim" },
   opts = {
     disabled_keys = {
@@ -9,3 +9,4 @@ return {
     },
   },
 }
+

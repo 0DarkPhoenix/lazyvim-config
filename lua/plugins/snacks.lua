@@ -1,5 +1,6 @@
 return {
   "folke/snacks.nvim",
+  mode = "VeryLazy",
   opts = {
     picker = {
       sources = {

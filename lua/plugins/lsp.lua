@@ -1,5 +1,6 @@
 return {
   "neovim/nvim-lspconfig",
+  mode = "VeryLazy",
   opts = {
     servers = {
       pyright = {
@@ -34,3 +35,4 @@ return {
     },
   },
 }
+
