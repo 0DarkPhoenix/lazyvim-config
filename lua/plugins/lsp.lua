@@ -10,6 +10,7 @@ return {
               packageIndexDepth = 2,
               autoSearchPaths = true,
               useLibraryCodeForTypes = true,
+              excludePaths = { "build/**", "*venv/**" },
             },
           },
         },
@@ -35,4 +36,3 @@ return {
     },
   },
 }
-
