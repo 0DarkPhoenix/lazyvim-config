@@ -1,6 +1,6 @@
 return {
   "m4xshen/hardtime.nvim",
-  mode = "VeryLazy",
+  lazy = false,
   dependencies = { "MunifTanjim/nui.nvim" },
   opts = {
     disable_mouse = true,

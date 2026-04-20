@@ -8,7 +8,7 @@ vim.keymap.set({ "n", "v" }, "c", '"cc', { noremap = true })
 vim.keymap.set({ "n", "v" }, "x", '"xx', { noremap = true })
 
 -- Center lines on vertical movement
-vim.opt.scrolloff = 999
+vim.opt.scrolloff = 99999
 
 -- Copy relative path with line number to clipboard
 vim.keymap.set("n", "<leader>yl", function()
