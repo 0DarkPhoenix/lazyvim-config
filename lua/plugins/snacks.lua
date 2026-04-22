@@ -27,5 +27,8 @@ return {
         },
       },
     },
+    scroll = {
+      enabled = false,
+    },
   },
 }
