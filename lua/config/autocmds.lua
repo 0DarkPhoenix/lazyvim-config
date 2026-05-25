@@ -70,5 +70,19 @@ vim.api.nvim_create_autocmd("LspAttach", {
       --   end,
       -- })
     end
+
+    -- Ruff: fixAll + organizeImports on save
+    if client.name == "ruff" then
+      local group = vim.api.nvim_create_augroup("RuffCodeActions_" .. bufnr, { clear = true })
+
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        group = group,
+        buffer = bufnr,
+        callback = function()
+          sync_code_action("source.fixAll.ruff")
+          sync_code_action("source.organizeImports.ruff")
+        end,
+      })
+    end
   end,
 })
