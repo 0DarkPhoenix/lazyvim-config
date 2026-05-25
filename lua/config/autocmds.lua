@@ -36,19 +36,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
       end
     end
 
-    -- Biome: fixAll on save
-    if client.name == "biome" then
-      local group = vim.api.nvim_create_augroup("BiomeFixAll_" .. bufnr, { clear = true })
-
-      vim.api.nvim_create_autocmd("BufWritePre", {
-        group = group,
-        buffer = bufnr,
-        callback = function()
-          sync_code_action("source.fixAll.biome")
-        end,
-      })
-    end
-
     -- Rust (rust-analyzer): fixAll + organizeImports on save
     if client.name == "rust_analyzer" then
       local group = vim.api.nvim_create_augroup("RustCodeActions_" .. bufnr, { clear = true })
@@ -59,28 +46,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
         callback = function()
           sync_code_action("source.fixAll")
           sync_code_action("source.organizeImports")
-        end,
-      })
-
-      -- Optional: ensure rustfmt runs too (if rust-analyzer formatting is enabled)
-      --   group = group,
-      --   buffer = bufnr,
-      --   callback = function()
-      --     vim.lsp.buf.format({ bufnr = bufnr, async = false })
-      --   end,
-      -- })
-    end
-
-    -- Ruff: fixAll + organizeImports on save
-    if client.name == "ruff" then
-      local group = vim.api.nvim_create_augroup("RuffCodeActions_" .. bufnr, { clear = true })
-
-      vim.api.nvim_create_autocmd("BufWritePre", {
-        group = group,
-        buffer = bufnr,
-        callback = function()
-          sync_code_action("source.fixAll.ruff")
-          sync_code_action("source.organizeImports.ruff")
         end,
       })
     end
