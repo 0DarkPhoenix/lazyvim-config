@@ -4,7 +4,9 @@
 
 -- Remap yanking keys to use their own unique registers
 vim.keymap.set({ "n", "v" }, "d", '"dd', { noremap = true })
+vim.keymap.set({ "n", "v" }, "D", '"dD', { noremap = true })
 vim.keymap.set({ "n", "v" }, "c", '"cc', { noremap = true })
+vim.keymap.set({ "n", "v" }, "C", '"cC', { noremap = true })
 vim.keymap.set({ "n", "v" }, "x", '"xx', { noremap = true })
 
 -- Center lines on vertical movement
