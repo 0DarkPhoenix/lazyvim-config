@@ -1,12 +1,23 @@
+local exclude_dirs = {
+  ".git",
+  "node_modules",
+  ".venv",
+  "venv",
+  "dist",
+  "build",
+  ".next",
+}
+
 return {
   "folke/snacks.nvim",
-  mode = "VeryLazy",
+  event = "VeryLazy",
   opts = {
     picker = {
       sources = {
         files = {
           hidden = true,
           ignored = false,
+          exclude = exclude_dirs,
         },
         explorer = {
           hidden = true,
@@ -15,6 +26,7 @@ return {
         grep = {
           hidden = true,
           ignored = false,
+          exclude = exclude_dirs,
         },
         notifications = {
           win = {
