@@ -6,6 +6,8 @@ local exclude_dirs = {
   "dist",
   "build",
   ".next",
+  ".mypy_cache",
+  ".pytest_cache",
 }
 
 return {
@@ -16,7 +18,7 @@ return {
       sources = {
         files = {
           hidden = true,
-          ignored = false,
+          ignored = true,
           exclude = exclude_dirs,
         },
         explorer = {
@@ -25,7 +27,7 @@ return {
         },
         grep = {
           hidden = true,
-          ignored = false,
+          ignored = true,
           exclude = exclude_dirs,
         },
         notifications = {
