@@ -1,9 +1,5 @@
 {
-  "userWords": [
-    "folke",
-    "nvim",
-    "venv",
-    "mypy",
-    "pytest"
-  ]
+  "version": "0.2",
+  "language": "en,nl-nl,de-de",
+  "userWords": ["folke", "nvim", "venv", "mypy", "pytest"],
 }
