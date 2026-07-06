@@ -7,8 +7,8 @@ local exclude_dirs = {
   ".next",
   ".mypy_cache",
   ".pytest_cache",
-  "**/__pycache__"
-  "*.egg-info"
+  "**/__pycache__",
+  "*.egg-info",
 }
 
 return {
