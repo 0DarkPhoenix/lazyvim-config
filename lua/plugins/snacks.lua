@@ -1,13 +1,14 @@
 local exclude_dirs = {
   ".git",
   "node_modules",
-  ".venv",
-  "venv",
+  "*venv",
   "dist",
   "build",
   ".next",
   ".mypy_cache",
   ".pytest_cache",
+  "**/__pycache__"
+  "*.egg-info"
 }
 
 return {
