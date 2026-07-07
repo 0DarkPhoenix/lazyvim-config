@@ -3,6 +3,7 @@
     "lazyvim.plugins.extras.coding.mini-comment",
     "lazyvim.plugins.extras.coding.mini-surround",
     "lazyvim.plugins.extras.editor.mini-move",
+    "lazyvim.plugins.extras.editor.telescope",
     "lazyvim.plugins.extras.lang.git",
     "lazyvim.plugins.extras.lang.json",
     "lazyvim.plugins.extras.lang.markdown",
@@ -14,7 +15,8 @@
     "lazyvim.plugins.extras.lang.typescript.tsgo",
     "lazyvim.plugins.extras.lang.yaml",
     "lazyvim.plugins.extras.util.dot",
-    "lazyvim.plugins.extras.util.gitui"
+    "lazyvim.plugins.extras.util.gitui",
+    "lazyvim.plugins.extras.util.project"
   ],
   "install_version": 8,
   "news": {
