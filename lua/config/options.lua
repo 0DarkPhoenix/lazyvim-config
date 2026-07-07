@@ -5,3 +5,5 @@
 -- Use invisible non-breaking space character for trailing whitespace instead of "-"
 vim.opt.listchars:append({ trail = "\u{00A0}" })
 vim.opt.list = true
+
+vim.g.lazyvim_python_lsp = "basedpyright"

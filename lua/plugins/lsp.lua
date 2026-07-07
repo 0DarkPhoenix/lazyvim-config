@@ -3,13 +3,16 @@ return {
   mode = "VeryLazy",
   opts = {
     servers = {
-      pyright = {
+      basedpyright = {
         settings = {
-          python = {
+          basedpyright = {
             analysis = {
-              packageIndexDepth = 2,
-              autoSearchPaths = true,
+              typeCheckingMode = "standard", -- Options: "off", "basic", "standard", "strict", "recommended", "all"
+              diagnosticMode = "openFilesOnly", -- Options: "openFilesOnly", "workspace"
               useLibraryCodeForTypes = true,
+              autoSearchPaths = true,
+              autoFormatString = true,
+              autoImportCompletions = true,
               exclude = {
                 ".git",
                 "*venv",
@@ -20,7 +23,12 @@ return {
                 "**/__pycache__",
                 "*.egg-info",
               },
+              inlayHints = {
+                callArgumentNames = "all",
+                functionReturnTypes = true,
+              }
             },
+            disableOrganizeImports = true, -- Let Ruff handle imports
           },
         },
       },
