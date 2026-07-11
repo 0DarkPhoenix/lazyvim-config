@@ -3,6 +3,20 @@ return {
   mode = "VeryLazy",
   opts = {
     servers = {
+      pyrefly = {
+        settings = {
+          python = {
+            pyrefly = {
+              typeCheckingMode = "default",
+              analysis = {
+                inlayHints = {
+                  callArgumentNames = "all",
+                },
+              },
+            },
+          },
+        },
+      },
       basedpyright = {
         settings = {
           basedpyright = {
@@ -26,7 +40,7 @@ return {
               inlayHints = {
                 callArgumentNames = "all",
                 functionReturnTypes = true,
-              }
+              },
             },
             disableOrganizeImports = true, -- Let Ruff handle imports
           },
