@@ -1,14 +1,16 @@
+local path_sep = "[/\\]"
+
 local exclude_dirs = {
-  "%.git",
-  "node_modules",
-  "^.*venv",
-  "dist",
-  "build",
-  "%.next",
-  "%.mypy_cache",
-  "%.pytest_cache",
-  ".*/%_%_pycache%_%_",
-  ".*egg-info",
+  "%.git" .. path_sep .. ".*",
+  "node_modules" .. path_sep .. ".*",
+  "^.*" .. path_sep .. "venv" .. path_sep .. ".*",
+  "dist" .. path_sep .. ".*",
+  "build" .. path_sep .. ".*",
+  "%.next" .. path_sep .. ".*",
+  "%.mypy_cache" .. path_sep .. ".*",
+  "%.pytest_cache" .. path_sep .. ".*",
+  ".*" .. path_sep .. "%_%_pycache%_%_" .. path_sep .. ".*",
+  ".*egg%-info",
 }
 
 return {
@@ -22,6 +24,17 @@ return {
     require("telescope").setup({
       defaults = {
         file_ignore_patterns = exclude_dirs,
+        vimgrep_arguments = {
+          "rg",
+          "--color=never",
+          "--no-heading",
+          "--with-filename",
+          "--line-number",
+          "--column",
+          "--smart-case",
+          "--hidden",
+          "--no-ignore",
+        },
       },
       pickers = {
         find_files = {
@@ -34,6 +47,10 @@ return {
           end,
         },
       },
+      -- Configure extension-specific Telescope options here if the extension supports them.
+      -- extensions = {
+      --   projects = { ... },
+      -- },
     })
   end,
 }
