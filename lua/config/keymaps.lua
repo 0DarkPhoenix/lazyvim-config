@@ -2,6 +2,8 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
+vim.keymap.set({ "n", "i", "v" }, "<F1>", "<Esc>", { noremap = true })
+
 -- Remap yanking keys to use their own unique registers
 vim.keymap.set({ "n", "v" }, "d", '"dd', { noremap = true })
 vim.keymap.set({ "n", "v" }, "D", '"dD', { noremap = true })
