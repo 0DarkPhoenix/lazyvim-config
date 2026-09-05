@@ -17,20 +17,20 @@ return {
   opts = {
     picker = {
       sources = {
-        -- files = {
-        --   hidden = true,
-        --   ignored = true,
-        --   exclude = exclude_dirs,
-        -- },
+        files = {
+          hidden = true,
+          ignored = true,
+          exclude = exclude_dirs,
+        },
         -- explorer = {
         --   hidden = true,
         --   ignored = true,
         -- },
-        -- grep = {
-        --   hidden = true,
-        --   ignored = true,
-        --   exclude = exclude_dirs,
-        -- },
+        grep = {
+          hidden = true,
+          ignored = true,
+          exclude = exclude_dirs,
+        },
         notifications = {
           win = {
             preview = {

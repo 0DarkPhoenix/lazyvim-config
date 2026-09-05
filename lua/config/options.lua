@@ -6,5 +6,5 @@
 vim.opt.listchars:append({ trail = "\u{00A0}" })
 vim.opt.list = true
 
-vim.g.lazyvim_python_lsp = "pyrefly"
+-- vim.g.lazyvim_python_lsp = "pyrefly"
 
