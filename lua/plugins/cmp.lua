@@ -9,6 +9,11 @@ return {
       --   -- still allow Enter to accept suggestions
       --   ["<CR>"] = { "accept", "fallback" },
       -- },
+      completion = {
+        ghost_text = {
+          enabled = false,
+        },
+      },
     },
   },
 }
