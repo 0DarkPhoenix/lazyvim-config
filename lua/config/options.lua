@@ -6,5 +6,13 @@
 vim.opt.listchars:append({ trail = "\u{00A0}" })
 vim.opt.list = true
 
--- vim.g.lazyvim_python_lsp = "pyrefly"
+vim.g.lazyvim_python_lsp = "pyrefly"
 
+vim.lsp.config("cspell_ls", {
+  cmd = {
+    "cspell-lsp",
+    "--stdio",
+    "--config",
+    vim.fn.expand(vim.fn.stdpath("config") .. "/cspell.json"), -- Forces global target
+  },
+})
