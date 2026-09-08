@@ -51,3 +51,16 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
   end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "*" },
+  callback = function()
+    -- Remove 'o' to stop auto-commenting on 'o'/'O'
+    -- Remove 'r' to stop auto-commenting on Enter in Insert mode
+    -- Remove 'c' to stop auto-wrapping comments
+    vim.opt.formatoptions = vim.opt.formatoptions - "o"
+    vim.opt.formatoptions = vim.opt.formatoptions - "r"
+    vim.opt.formatoptions = vim.opt.formatoptions - "c"
+  end,
+  desc = "Disable automatic comment continuation",
+})
